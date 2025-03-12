@@ -64,8 +64,6 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
           successRef.current.style.display = "block";
         }
         setLoading(false);
-        const data = await response.json();
-        console.log(data);
         setWishData({ name: "", message: "" });
         fetchWishes();
       }
