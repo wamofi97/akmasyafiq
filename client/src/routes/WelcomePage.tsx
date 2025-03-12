@@ -69,7 +69,7 @@ const WelcomePage = ({
       {showCurtain && (
         <div>
           <motion.div
-            className="absolute top-0 left-0 z-50 h-full w-full bg-rose-900"
+            className="absolute top-0 left-0 z-50 h-full w-full bg-[#a75f5f]"
             initial={{ scaleY: 0 }}
             animate={{ scaleY: 1 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
