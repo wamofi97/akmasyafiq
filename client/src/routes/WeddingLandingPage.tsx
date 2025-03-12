@@ -3,7 +3,7 @@ import WelcomePage from "./WelcomePage";
 import InvitationCard from "./InvitationCard";
 
 const WeddingLanding = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   return (
     <div className="">
