@@ -19,10 +19,17 @@ const Contact = () => {
         <div className="flex w-full items-center">
           <p className="w-3/5 text-start">Mohd Zin</p>
           <div className="flex w-2/5 justify-end gap-6">
-            <a href="tel:+60148357418" className="">
+            <a
+              href="tel:+60148357418"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <Phone />
             </a>
-            <a href="https://wa.me/60148357418" target="blank" className="">
+            <a
+              href="https://wa.me/60148357418"
+              target="blank"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <MessageCircle />
             </a>
           </div>
@@ -30,10 +37,17 @@ const Contact = () => {
         <div className="flex w-full items-center">
           <p className="w-3/5 text-start">Kak Na</p>
           <div className="flex w-2/5 justify-end gap-6">
-            <a href="tel:+601110995401" className="">
+            <a
+              href="tel:+601110995401"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <Phone />
             </a>
-            <a href="https://wa.me/601110995401" target="blank" className="">
+            <a
+              href="https://wa.me/601110995401"
+              target="blank"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <MessageCircle />
             </a>
           </div>
@@ -41,10 +55,17 @@ const Contact = () => {
         <div className="flex w-full items-center">
           <p className="w-3/5 text-start">Aidil</p>
           <div className="flex w-2/5 justify-end gap-6">
-            <a href="tel:+601117821968" className="">
+            <a
+              href="tel:+601117821968"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <Phone />
             </a>
-            <a href="https://wa.me/601117821968" target="blank" className="">
+            <a
+              href="https://wa.me/601117821968"
+              target="blank"
+              className="transition-colors duration-300 hover:text-[#d17b7b]"
+            >
               <MessageCircle />
             </a>
           </div>
