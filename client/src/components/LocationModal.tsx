@@ -31,10 +31,10 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   }, [isOpen, onClose]);
   if (!isOpen) return null;
   return (
-    <div className="primary-text fixed inset-0 flex w-full flex-col items-center justify-center bg-black/40 px-2">
+    <div className="primary-text fixed inset-0 flex w-full flex-col items-center justify-end bg-black/40 px-2">
       <div
         ref={modalRef}
-        className="relative w-full max-w-md rounded-lg bg-neutral-50 px-6 py-3 shadow-lg"
+        className="relative mb-20 w-full max-w-md rounded-lg bg-neutral-50 p-6 shadow-lg"
       >
         <Title title="Lokasi" />
         <p className="my-4 text-lg">
@@ -51,7 +51,7 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         </a>
         <button
           onClick={onClose}
-          className="absolute top-0 right-0 m-2 cursor-pointer text-3xl"
+          className="absolute top-0 right-0 m-2 cursor-pointer text-3xl transition-colors duration-300 hover:text-[#d17b7b]"
         >
           <IoClose />
         </button>
