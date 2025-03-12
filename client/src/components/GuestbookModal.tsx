@@ -80,12 +80,12 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
     }));
   };
 
-  const ok = () => {
-    if (successRef.current) {
-      successRef.current.style.display = "block";
-    }
-    onClose();
-  };
+  // const ok = () => {
+  //   if (successRef.current) {
+  //     successRef.current.style.display = "block";
+  //   }
+  //   onClose();
+  // };
 
   return (
     <div
@@ -144,7 +144,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
               </button>
             </div>
           </form>
-          <div
+          {/* <div
             ref={successRef}
             className="fixed top-0 left-0 bg-black/80"
             style={{ display: "none", height: "100vh", width: "100%" }}
@@ -158,7 +158,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
                 OK
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
