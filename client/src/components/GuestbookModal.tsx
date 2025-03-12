@@ -66,6 +66,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
         setLoading(false);
         setWishData({ name: "", message: "" });
         fetchWishes();
+        onClose();
       }
     } catch (error) {
       console.error((error as Error).message);
