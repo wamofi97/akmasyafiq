@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
 import Title from "./Title";
+import { motion } from "framer-motion";
 
 const Countdown = () => {
   const weddingDate = useMemo(() => new Date("2025-05-03T11:30:00"), []);
@@ -36,35 +37,43 @@ const Countdown = () => {
 
   return (
     <>
-      <div className="my-8 flex flex-col items-center">
+      <motion.div
+        initial={{ opacity: 0, filter: "blur(10px)", y: 100 }}
+        whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+        viewport={{ once: true, amount: 0.4 }}
+        transition={{
+          duration: 0.8,
+        }}
+        className="primary-text z-10 my-8 flex flex-col items-center"
+      >
         <Title title="Menghitung hari" />
-        <div className="flex items-center justify-center gap-4 sm:gap-10">
-          <div className="w-20 rounded-lg p-3 shadow-lg shadow-slate-300">
+        <div className="flex items-center justify-center gap-2 sm:gap-8">
+          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.days}
             </p>
             <p>Hari</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-lg shadow-slate-300">
+          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.hours}
             </p>
             <p>Jam</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-lg shadow-slate-300">
+          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.minutes}
             </p>
             <p>Minit</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-lg shadow-slate-300">
+          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.seconds}
             </p>
             <p>Saat</p>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 };

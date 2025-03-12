@@ -1,5 +1,5 @@
-import { Pause, PlayCircle } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
+import { FaPause, FaPlay } from "react-icons/fa";
 
 const Song = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -33,11 +33,19 @@ const Song = () => {
         <source src="/wedding-song.mp3" type="audio/mpeg" />
       </audio>
       <button
-        className={`rounded-xl bg-indigo-200 p-4 opacity-50 transition-transform duration-700 ease-in-out ${isPlaying ? "animate-spin-slow" : ""}`}
-        style={{ fontSize: "36px" }}
         onClick={togglePlay}
+        className="flex cursor-pointer flex-col items-center gap-1 text-sm"
       >
-        {isPlaying ? <Pause /> : <PlayCircle />}
+        {isPlaying ? (
+          <div>
+            <FaPause size={25} />
+          </div>
+        ) : (
+          <div>
+            <FaPlay size={25} />
+          </div>
+        )}
+        <p className="hidden sm:block">Song</p>
       </button>
     </div>
     // </div>

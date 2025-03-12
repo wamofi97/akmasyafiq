@@ -1,35 +1,79 @@
+import { useEffect, useState } from "react";
 import Title from "./Title";
+import GuestbookModal from "./GuestbookModal";
+import { motion } from "framer-motion";
+
+type Wish = {
+  name: string;
+  message: string;
+};
 
 const Guestbook = () => {
+  const [wishes, setWishes] = useState<Wish[]>([]);
+  const [isGuestbookOpenModal, setIsGuestbookOpenModal] = useState(false);
+
+  const openGuestbookModal = () => {
+    setIsGuestbookOpenModal(true);
+  };
+
+  const closeGuestbookModal = () => {
+    setIsGuestbookOpenModal(false);
+  };
+
+  const fetchWishes = async () => {
+    try {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/wishes`);
+      const data = await response.json();
+      console.log(data);
+      setWishes(data);
+    } catch (error) {
+      console.error((error as Error).message);
+    }
+  };
+
+  useEffect(() => {
+    fetchWishes();
+  }, []);
+
   return (
-    <div className="my-8 flex flex-col items-center">
+    <motion.div
+      initial={{ opacity: 0, filter: "blur(10px)", y: 100 }}
+      whileInView={{ opacity: 1, filter: "blur(0px)", y: 0 }}
+      viewport={{ once: true, amount: 0.5 }}
+      transition={{
+        duration: 0.8,
+      }}
+      className="primary-text my-8 flex flex-col items-center"
+    >
       <Title title="Ucapan" />
-      <div
-        className="bg mx-auto mb-4 max-w-96 overflow-y-auto"
-        style={{ maxHeight: "300px" }}
-      >
+      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg p-2">
         {wishes &&
           wishes.map((wish, index) => {
             return (
               <div key={index} className="mx-auto">
-                <p className="font-medium">{wish?.name}</p>
-                <p className="text-sm font-light italic">{wish?.message}</p>
-                <hr className="mx-auto my-4 h-1 w-full bg-neutral-500 opacity-5" />
+                <p className="text-lg font-medium">{wish?.name}</p>
+                <p className="font-light text-neutral-500 italic">
+                  {wish?.message}
+                </p>
+                <hr className="mx-auto my-4 h-1 w-full text-neutral-100" />
               </div>
             );
           })}
       </div>
-      <button className="button wedding-primary" onClick={openUcapan}>
+
+      <button
+        onClick={openGuestbookModal}
+        className="mt-2 flex items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white"
+      >
         Hantar Ucapan
       </button>
-      <textarea
-        className="mt-2 h-24 w-80 rounded-lg border p-2"
-        placeholder="Write your message..."
-      ></textarea>
-      <button className="mt-2 rounded-lg bg-green-600 px-4 py-2 text-white hover:bg-green-800">
-        Submit
-      </button>
-    </div>
+
+      <GuestbookModal
+        isOpen={isGuestbookOpenModal}
+        onClose={closeGuestbookModal}
+        fetchWishes={fetchWishes}
+      />
+    </motion.div>
   );
 };
 
