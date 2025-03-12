@@ -8,18 +8,13 @@ type GuestbookModalProps = {
   fetchWishes: () => void;
 };
 
-type Wish = {
-  name: string;
-  message: string;
-};
-
 const GuestbookModal: React.FC<GuestbookModalProps> = ({
   isOpen,
   onClose,
   fetchWishes,
 }) => {
-  const modalRef = useRef<HTMLDivElement>();
-  const successRef = useRef();
+  const modalRef = useRef<HTMLDivElement | null>(null);
+  const successRef = useRef<HTMLDivElement>(null);
   const [loading, setLoading] = useState(false);
   const [wishData, setWishData] = useState({
     name: "",
@@ -27,11 +22,13 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
   });
 
   const { name, message } = wishData;
-  const [wish, setWish] = useState<Wish[]>([]);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node | null)
+      ) {
         onClose();
       }
     };
@@ -46,7 +43,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
   }, [isOpen, onClose]);
   if (!isOpen) return null;
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     const submissionData = {
@@ -63,28 +60,32 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
         body: JSON.stringify(submissionData),
       });
       if (response.ok) {
-        successRef.current.style.display = "block";
+        if (successRef.current) {
+          successRef.current.style.display = "block";
+        }
         setLoading(false);
         const data = await response.json();
         console.log(data);
-        setWish((prevWish) => [submissionData, ...prevWish]);
         setWishData({ name: "", message: "" });
         fetchWishes();
       }
     } catch (error) {
-      console.error(error.message);
+      console.error((error as Error).message);
     }
   };
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLElement>) => {
+    const target = e.target as HTMLInputElement; // Cast to HTMLInputElement
     setWishData((prevWishData) => ({
       ...prevWishData,
-      [e.target.name]: e.target.value,
+      [target.name]: target.value,
     }));
   };
 
   const ok = () => {
-    successRef.current.style.display = "none";
+    if (successRef.current) {
+      successRef.current.style.display = "block";
+    }
     onClose();
   };
 
@@ -145,7 +146,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
             className="fixed top-0 left-0 bg-black/80"
             style={{ display: "none", height: "100vh", width: "100%" }}
           >
-            <div className="m-[50vh] mx-auto flex max-w-[450px] translate-y-[-50%] flex-col items-center rounded-xl bg-[f4f4f4] bg-white p-4 text-center">
+            <div className="m-[50vh] mx-auto flex max-w-[450px] translate-y-[-50%] flex-col items-center rounded-xl bg-white p-4 text-center">
               <p className="my-2 text-4xl text-green-700">
                 <FaRegCheckCircle />
               </p>

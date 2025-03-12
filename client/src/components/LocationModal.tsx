@@ -9,11 +9,14 @@ type ContactModalProps = {
 };
 
 const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
-  const modalRef = useRef<HTMLDivElement>();
+  const modalRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        modalRef.current &&
+        !modalRef.current.contains(event.target as Node | null)
+      ) {
         onClose();
       }
     };
