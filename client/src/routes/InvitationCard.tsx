@@ -9,7 +9,7 @@ import ParticlesBackground from "../components/ParticlesBackground";
 
 const InvitationCard = () => {
   return (
-    <div className="relative mx-auto max-w-[700px]">
+    <div className="relative mx-auto max-w-[700px] overflow-hidden">
       <motion.div
         className="absolute top-0 left-0 z-50 h-full w-full bg-[#a75f5f]"
         initial={{ scaleX: 1 }}
@@ -25,15 +25,33 @@ const InvitationCard = () => {
         style={{ transformOrigin: "right" }}
       />
 
-      {/* <div className="fixed top-0 left-0 h-screen w-full bg-[url('/background.png')] bg-cover bg-center"></div> */}
+      {/* <div className="fixed top-0 left-0 h-screen w-full bg-[url('/background.webp')] bg-cover bg-center"></div> */}
       {/* <motion.div
         className="absolute top-0 left-[50%] z-50 h-full w-full bg-rose-900"
         initial={{ x: 0 }}
         animate={{ x: 1000 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
-      /> */}
+        /> */}
       <div className="mx-auto flex flex-col items-center justify-center px-2 text-center">
         <ParticlesBackground />
+        <div className="z-30">
+          <img
+            className="absolute -top-24 -left-28 w-80 opacity-90 sm:-top-20"
+            src="/top-left.webp"
+          />
+          <img
+            className="absolute -top-24 -right-28 w-80 opacity-90 sm:-top-20"
+            src="/top-right.webp"
+          />
+          <img
+            className="absolute -bottom-16 -left-14 w-48 -rotate-12 opacity-80 sm:-bottom-10"
+            src="/bottom-left.webp"
+          />
+          <img
+            className="absolute -right-14 -bottom-16 w-48 rotate-12 opacity-80 sm:-bottom-10"
+            src="/bottom-right.webp"
+          />
+        </div>
         <EventDetails />
 
         <Navigation />
