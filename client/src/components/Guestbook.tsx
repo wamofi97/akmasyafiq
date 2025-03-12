@@ -43,7 +43,7 @@ const Guestbook = () => {
       transition={{
         duration: 0.8,
       }}
-      className="primary-text my-8 flex flex-col items-center"
+      className={`primary-text my-8 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
     >
       <Title title="Ucapan" />
       <div className="bg- mx-auto mb-4 max-h-[300px] w-full overflow-y-auto border-t border-b p-4">
@@ -68,7 +68,7 @@ const Guestbook = () => {
 
       <button
         onClick={openGuestbookModal}
-        className="mt-2 flex items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white"
+        className="mt-2 flex cursor-pointer items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
       >
         Hantar Ucapan
       </button>
