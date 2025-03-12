@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import { IoClose } from "react-icons/io5";
-import { FaRegCheckCircle } from "react-icons/fa";
+// import { FaRegCheckCircle } from "react-icons/fa";
 
 type GuestbookModalProps = {
   isOpen: boolean;
