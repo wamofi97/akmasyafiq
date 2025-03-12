@@ -46,7 +46,7 @@ const Guestbook = () => {
       className="primary-text my-8 flex flex-col items-center"
     >
       <Title title="Ucapan" />
-      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg p-2">
+      <div className="bg- mx-auto mb-4 max-h-[300px] w-full overflow-y-auto border-t border-b p-4">
         {wishes?.length === 0 && (
           <p className="text-center text-neutral-600">
             Belum ada ucapan. Jadi orang pertama yang beri ucapan.
