@@ -46,7 +46,15 @@ const Guestbook = () => {
       className={`primary-text my-8 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
     >
       <Title title="Ucapan" />
-      <div className="bg- mx-auto mb-4 max-h-[300px] w-full overflow-y-auto border-t border-b p-4">
+      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg bg-[#fff2f2] bg-cover bg-center bg-no-repeat p-4 sm:min-w-[500px]">
+        <img
+          src="/small-top-left.webp"
+          className="absolute top-14 -left-4 w-14"
+        />
+        <img
+          src="/small-bottom-right.webp"
+          className="absolute -right-4 bottom-14 w-14"
+        />
         {wishes?.length === 0 && (
           <p className="text-center text-neutral-600">
             Belum ada ucapan. Jadi orang pertama yang beri ucapan.
@@ -57,10 +65,10 @@ const Guestbook = () => {
             return (
               <div key={index} className="mx-auto">
                 <p className="text-lg font-medium">{wish?.name}</p>
-                <p className="font-light text-neutral-500 italic">
+                <p className="mb-2 font-light text-neutral-500 italic">
                   {wish?.message}
                 </p>
-                <hr className="mx-auto my-4 h-1 w-full text-neutral-100" />
+                <hr className="mx-auto my-4 h-1 w-full text-neutral-200" />
               </div>
             );
           })}
