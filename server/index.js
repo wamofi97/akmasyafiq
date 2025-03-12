@@ -11,7 +11,6 @@ app.use(cors());
 
 //ROUTES
 
-// createWedding, get wedding, update wedding route
 app.use("/", require("./routes/wedding"));
 
 app.listen(port, () => {
