@@ -90,7 +90,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
 
   return (
     <div
-      className={`primary-text fixed ${isOpen && "z-30"} inset-0 flex w-full flex-col items-center justify-center bg-black/40 px-2`}
+      className={`primary-text fixed border ${isOpen && "z-30"} inset-0 mx-auto flex w-full min-w-[250px] flex-col items-center justify-center bg-black/40 px-2`}
     >
       <div
         ref={modalRef}
@@ -100,7 +100,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
           <h5 className="mb-4 text-center text-2xl font-bold"> Ucapan</h5>
           <button
             onClick={onClose}
-            className="absolute top-0 right-0 m-2 text-3xl"
+            className="absolute top-0 right-0 m-2 cursor-pointer text-3xl transition-colors duration-300 hover:text-[#d17b7b]"
           >
             <IoClose />
           </button>
@@ -109,7 +109,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
               Nama{" "}
               <input
                 required
-                className="mb-3 w-full rounded-xl bg-slate-100 px-4 py-2 focus:border-transparent focus:ring-2 focus:ring-amber-400 focus:outline-none"
+                className="mb-3 w-full rounded-xl bg-neutral-100 px-4 py-2 text-sm focus:border-transparent focus:ring-2 focus:ring-[#cbb79f] focus:outline-none"
                 type="text"
                 name="name"
                 placeholder="Nama anda"
@@ -123,7 +123,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
             </label>
             <textarea
               required
-              className="mb-3 w-full rounded-xl bg-slate-100 px-4 py-2 text-sm focus:border-transparent focus:ring-2 focus:ring-amber-400 focus:outline-none"
+              className="mb-3 w-full rounded-xl bg-neutral-100 px-4 py-2 text-sm focus:border-transparent focus:ring-2 focus:ring-[#cbb79f] focus:outline-none"
               name="message"
               placeholder="Ucapan anda "
               value={message}
@@ -133,7 +133,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
             <div className="flex justify-end">
               <button
                 type="submit"
-                className="mt-2 flex items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white"
+                className="mt-2 flex cursor-pointer items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
               >
                 {loading ? (
                   <div className="flex items-center gap-2">
