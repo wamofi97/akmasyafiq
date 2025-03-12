@@ -22,7 +22,7 @@ const EventDetails = () => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="primary-text my-8 flex min-h-[75vh] w-full flex-col justify-evenly px-4 text-center"
+        className="primary-text my-8 flex min-h-[85vh] w-full flex-col justify-evenly px-4 text-center"
       >
         <Title title="Walimatul Urus" />
         <motion.p className="text-neutral-600">
