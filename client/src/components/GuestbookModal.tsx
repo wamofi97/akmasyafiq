@@ -129,15 +129,20 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
               onChange={handleChange}
             ></textarea>
 
-            <button type="submit" className="button wedding-primary">
-              {loading ? (
-                <div className="flex items-center gap-2">
-                  <p className="pr">Menghantar..</p>
-                </div>
-              ) : (
-                "Hantar"
-              )}
-            </button>
+            <div className="flex justify-end">
+              <button
+                type="submit"
+                className="mt-2 flex items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white"
+              >
+                {loading ? (
+                  <div className="flex items-center gap-2">
+                    <p className="pr">Menghantar..</p>
+                  </div>
+                ) : (
+                  "Hantar"
+                )}
+              </button>
+            </div>
           </form>
           <div
             ref={successRef}
