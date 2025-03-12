@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
-import { FaPause, FaPlay } from "react-icons/fa";
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa6";
 
 const Song = () => {
   const [isPlaying, setIsPlaying] = useState(true);
@@ -42,7 +43,7 @@ const Song = () => {
           </div>
         ) : (
           <div>
-            <FaPlay size={25} />
+            <FaPlay size={23} />
           </div>
         )}
         <p className="hidden sm:block">Song</p>
