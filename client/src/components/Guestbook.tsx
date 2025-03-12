@@ -47,6 +47,11 @@ const Guestbook = () => {
     >
       <Title title="Ucapan" />
       <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg p-2">
+        {wishes?.length === 0 && (
+          <p className="text-center text-neutral-600">
+            Belum ada ucapan. Jadi orang pertama yang beri ucapan.
+          </p>
+        )}
         {wishes &&
           wishes.map((wish, index) => {
             return (
