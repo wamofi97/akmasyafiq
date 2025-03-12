@@ -65,10 +65,18 @@ const InvitationCard = () => {
           transition={{
             duration: 0.8,
           }}
-          className="crimson my-8 rounded-sm bg-[#f0ebe4] p-6 text-neutral-600 italic"
+          className="crimson relative my-8 rounded-sm bg-[#fff2f2] p-6 text-neutral-600 italic"
         >
           “Semoga Allah memberi barakah kepadamu dan keberkahan atas pernikahan
           kamu, dan mengumpulkan kalian berdua dalam kebaikan.”
+          <img
+            src="/small-top-right.webp"
+            className="absolute -top-6 -right-4 w-20"
+          />
+          <img
+            src="/small-bottom-left.webp"
+            className="absolute -bottom-6 -left-4 w-20"
+          />
         </motion.p>
 
         <Location />
