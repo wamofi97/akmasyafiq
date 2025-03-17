@@ -42,7 +42,7 @@ const Guestbook = () => {
       transition={{
         duration: 0.8,
       }}
-      className={`primary-text my-4 px-9 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
+      className={`primary-text z-30 my-4 flex min-w-[250px] flex-col items-center px-9`}
     >
       <Title title="Ucapan" />
       <div className="mx-auto mb-4 max-h-[300px] w-full min-w-[300px] overflow-y-auto rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] p-4 sm:min-w-[500px]">
