@@ -1,6 +1,7 @@
 import { MessageCircle, Phone } from "lucide-react";
 import { useEffect, useRef } from "react";
 import { IoClose } from "react-icons/io5";
+import { motion } from "framer-motion";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -31,7 +32,10 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
     <div className="primary-text fixed inset-0 flex w-full flex-col items-center justify-end bg-black/40 px-2">
-      <div
+      <motion.div
+        initial={{ y: 300 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.25 }}
         ref={modalRef}
         className="relative mb-20 w-full max-w-md rounded-lg bg-neutral-50 p-6 shadow-lg"
       >
@@ -98,7 +102,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         >
           <IoClose />
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };

@@ -2,6 +2,8 @@ import { useEffect, useRef } from "react";
 import { IoClose } from "react-icons/io5";
 import { SiGooglemaps } from "react-icons/si";
 import Title from "./Title";
+import { FaWaze } from "react-icons/fa";
+import { motion } from "framer-motion";
 
 type ContactModalProps = {
   isOpen: boolean;
@@ -32,12 +34,15 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
   return (
     <div className="primary-text fixed inset-0 flex w-full flex-col items-center justify-end bg-black/40 px-2">
-      <div
+      <motion.div
+        initial={{ y: 300 }}
+        animate={{ y: 0 }}
+        transition={{ duration: 0.25 }}
         ref={modalRef}
         className="relative mb-20 w-full max-w-md rounded-lg bg-neutral-50 p-6 shadow-lg"
       >
         <Title title="Lokasi" />
-        <div className="space-y-4">
+        <div className="space-y-2">
           <p>NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN</p>
 
           <a
@@ -48,6 +53,14 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
             <SiGooglemaps />
             Google Map
           </a>
+          <a
+            className="mx-auto flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
+            href="https://waze.com/ul/hw2befvjc5"
+            target="_blank"
+          >
+            <FaWaze />
+            Waze
+          </a>
         </div>
         <button
           onClick={onClose}
@@ -55,7 +68,7 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         >
           <IoClose />
         </button>
-      </div>
+      </motion.div>
     </div>
   );
 };
