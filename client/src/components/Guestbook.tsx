@@ -48,11 +48,11 @@ const Guestbook = () => {
       <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] bg-cover bg-center bg-no-repeat p-4 sm:min-w-[500px]">
         <img
           src="/small-top-left.webp"
-          className="absolute top-14 -left-4 w-14"
+          className="absolute top-14 left-4 w-14"
         />
         <img
           src="/small-bottom-right.webp"
-          className="absolute -right-4 bottom-14 w-14"
+          className="absolute right-4 bottom-12 w-14"
         />
         {wishes?.length === 0 && (
           <p className="crimson text-center text-sm font-light text-neutral-600 italic">
