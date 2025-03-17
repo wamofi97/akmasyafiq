@@ -45,7 +45,7 @@ const Guestbook = () => {
       className={`primary-text my-4 px-9 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
     >
       <Title title="Ucapan" />
-      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] bg-cover bg-center bg-no-repeat p-4 sm:min-w-[500px]">
+      <div className="mx-auto mb-4 max-h-[300px] w-full min-w-[300px] overflow-y-auto rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] p-4 sm:min-w-[500px]">
         <img
           src="/small-top-left.webp"
           className="absolute top-14 left-4 w-14"
