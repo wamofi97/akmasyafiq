@@ -28,7 +28,7 @@ const Navigation = () => {
 
   return (
     <div
-      className={`fixed bottom-0 z-50 flex w-full max-w-[700px] items-center justify-evenly bg-[#A75F5F] py-5 text-neutral-100 sm:pt-3 sm:pb-2`}
+      className={`fixed bottom-0 z-50 flex w-full max-w-[700px] items-center justify-evenly bg-[#A75F5F]/95 py-5 text-neutral-100 sm:pt-3 sm:pb-2`}
     >
       <button
         onClick={openContactModal}
