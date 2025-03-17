@@ -30,7 +30,7 @@ const WelcomePage = ({
         </p>
         <div className="my-8 flex flex-col items-center">
           <img src="/logo.png" alt="logo" className="my-4 w-32" />
-          <h1 className="names primary-color text-5xl font-medium tracking-wider">
+          <h1 className="names primary-color text-4xl font-medium tracking-wider">
             Akma & Syafiq
           </h1>
         </div>
