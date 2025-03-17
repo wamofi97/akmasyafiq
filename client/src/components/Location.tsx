@@ -2,6 +2,7 @@ import { SiGooglemaps } from "react-icons/si";
 import { motion } from "framer-motion";
 
 import Title from "./Title";
+import { FaWaze } from "react-icons/fa6";
 
 const Location = () => {
   return (
@@ -17,15 +18,24 @@ const Location = () => {
       <Title title="Lokasi" />
       <div className="space-y-4">
         <p>NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN</p>
-
-        <a
-          className="mx-auto flex w-fit cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
-          href="https://maps.app.goo.gl/WeCnhFnC6RKoU3ZP7"
-          target="_blank"
-        >
-          <SiGooglemaps />
-          Google Map
-        </a>
+        <div className="flex justify-center gap-2 sm:gap-4">
+          <a
+            className="flex w-36 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-white transition-colors duration-300 hover:bg-[#b86969] sm:w-40 sm:text-lg"
+            href="https://maps.app.goo.gl/WeCnhFnC6RKoU3ZP7"
+            target="_blank"
+          >
+            <SiGooglemaps />
+            Google Map
+          </a>
+          <a
+            className="flex w-36 cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-white transition-colors duration-300 hover:bg-[#b86969] sm:w-40 sm:text-lg"
+            href="https://waze.com/ul/hw2befvjc5"
+            target="_blank"
+          >
+            <FaWaze />
+            Waze
+          </a>
+        </div>
       </div>
     </motion.div>
   );
