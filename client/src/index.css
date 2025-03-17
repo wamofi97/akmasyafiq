@@ -1,12 +1,17 @@
 @import "tailwindcss";
 
 .names {
-  font-family: "Waterfall", sans-serif;
+  font-family: "Dancing Script", cursive;
 }
 
 .primary-text {
   color: #a75f5f;
   font-family: "Recoleta", sans-serif;
+}
+
+.secondary-text {
+  font-family: "Satoshi", sans-serif;
+  color: #525252;
 }
 
 .primary-color {
@@ -21,25 +26,37 @@
   font-family: "Cinzel", sans-serif;
 }
 
+.waterfall {
+  font-family: "Waterfall", sans-serif;
+}
+
 .crimson {
   font-family: "Crimson Text", sans-serif;
 }
 
+.bilbo {
+  font-family: "Bilbo Swash Caps", cursive;
+}
+
 .snowfall {
+  position: absolute;
+  z-index: -1;
   inset: 0;
   overflow: hidden;
   background: transparent;
 }
 
 .snowflake {
-  --small: 5px;
-  --medium: 10px;
+  --small: 3px;
+  --medium: 7px;
   width: var(--small);
   height: var(--small);
   position: absolute;
-  background-color: #ece0d1;
+  background-color: #cbb79f;
   border-radius: 50%;
-  animation: snow 6s linear infinite;
+  animation:
+    snow 6s linear infinite,
+    wind 10s ease-in-out infinite;
   top: -10%;
   left: 10%;
 }
