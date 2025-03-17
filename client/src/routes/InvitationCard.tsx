@@ -34,7 +34,7 @@ const InvitationCard = () => {
         animate={{ x: 1000 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
         /> */}
-      <div className="mx-auto flex flex-col items-center justify-center text-center sm:px-10">
+      <div className="mx-auto flex flex-col items-center justify-center text-center">
         <ParticlesBackground />
         <div className="z-10">
           <img
