@@ -37,18 +37,18 @@ const LocationModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         className="relative mb-20 w-full max-w-md rounded-lg bg-neutral-50 p-6 shadow-lg"
       >
         <Title title="Lokasi" />
-        <p className="my-4 text-lg">
-          NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN
-        </p>
+        <div className="space-y-4">
+          <p>NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN</p>
 
-        <a
-          className="mx-auto flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
-          href="https://maps.app.goo.gl/WeCnhFnC6RKoU3ZP7"
-          target="_blank"
-        >
-          <SiGooglemaps />
-          Google Map
-        </a>
+          <a
+            className="mx-auto flex cursor-pointer items-center justify-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
+            href="https://maps.app.goo.gl/WeCnhFnC6RKoU3ZP7"
+            target="_blank"
+          >
+            <SiGooglemaps />
+            Google Map
+          </a>
+        </div>
         <button
           onClick={onClose}
           className="absolute top-0 right-0 m-2 cursor-pointer text-3xl transition-colors duration-300 hover:text-[#d17b7b]"

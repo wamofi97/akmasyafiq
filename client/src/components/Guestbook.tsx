@@ -24,7 +24,6 @@ const Guestbook = () => {
     try {
       const response = await fetch(`${import.meta.env.VITE_API_URL}/wishes`);
       const data = await response.json();
-      console.log(data);
       setWishes(data);
     } catch (error) {
       console.error((error as Error).message);
@@ -43,10 +42,10 @@ const Guestbook = () => {
       transition={{
         duration: 0.8,
       }}
-      className={`primary-text my-8 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
+      className={`primary-text my-4 px-9 ${isGuestbookOpenModal && "z-30"} flex min-w-[250px] flex-col items-center`}
     >
       <Title title="Ucapan" />
-      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg bg-[#fff2f2] bg-cover bg-center bg-no-repeat p-4 sm:min-w-[500px]">
+      <div className="mx-auto mb-4 max-h-[300px] w-full overflow-y-auto rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] bg-cover bg-center bg-no-repeat p-4 sm:min-w-[500px]">
         <img
           src="/small-top-left.webp"
           className="absolute top-14 -left-4 w-14"
@@ -56,7 +55,7 @@ const Guestbook = () => {
           className="absolute -right-4 bottom-14 w-14"
         />
         {wishes?.length === 0 && (
-          <p className="text-center text-neutral-600">
+          <p className="crimson text-center text-sm font-light text-neutral-600 italic">
             Belum ada ucapan. Jadi orang pertama yang beri ucapan.
           </p>
         )}
@@ -64,11 +63,13 @@ const Guestbook = () => {
           wishes.map((wish, index) => {
             return (
               <div key={index} className="mx-auto">
-                <p className="text-lg font-medium">{wish?.name}</p>
-                <p className="mb-2 font-light text-neutral-500 italic">
+                <p className="font-medium">{wish?.name}</p>
+                <p className="crimson text-sm font-light text-neutral-600 italic">
                   {wish?.message}
                 </p>
-                <hr className="mx-auto my-4 h-1 w-full text-neutral-200" />
+                <hr
+                  className={`${index === wishes.length - 1 && "hidden"} mx-auto my-2 h-1 w-full text-neutral-200`}
+                />
               </div>
             );
           })}
@@ -76,7 +77,7 @@ const Guestbook = () => {
 
       <button
         onClick={openGuestbookModal}
-        className="mt-2 flex cursor-pointer items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
+        className="flex cursor-pointer items-center gap-2 rounded-lg bg-[#A75F5F] px-4 py-2 text-lg font-medium text-white transition-colors duration-300 hover:bg-[#b86969]"
       >
         Hantar Ucapan
       </button>

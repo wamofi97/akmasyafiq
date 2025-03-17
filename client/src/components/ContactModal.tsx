@@ -35,7 +35,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
         ref={modalRef}
         className="relative mb-20 w-full max-w-md rounded-lg bg-neutral-50 p-6 shadow-lg"
       >
-        <p>Bagi sebarang pertanyaan, sila hubungi</p>
+        <p className="pt-4">Bagi sebarang pertanyaan, sila hubungi</p>
         <div className="my-6 flex w-full flex-col items-center gap-4 text-lg font-semibold">
           <div className="flex w-full items-center">
             <p className="w-3/5 text-start">Mohd Zin</p>

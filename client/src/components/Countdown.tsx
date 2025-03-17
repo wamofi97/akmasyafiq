@@ -44,33 +44,33 @@ const Countdown = () => {
         transition={{
           duration: 0.8,
         }}
-        className="primary-text z-10 my-8 flex flex-col items-center"
+        className="primary-text z-10 my-4 flex flex-col items-center px-9"
       >
-        <Title title="Menghitung hari" />
-        <div className="flex items-center justify-center gap-2 sm:gap-8">
-          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
+        <Title title="Menghitung Hari" />
+        <div className="flex items-center justify-center gap-3 sm:gap-8">
+          <div className="w-16 rounded-lg p-1 shadow-md shadow-stone-300 sm:w-20 sm:p-3">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.days}
             </p>
-            <p>Hari</p>
+            <p className="secondary-text">Hari</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
+          <div className="w-16 rounded-lg p-1 shadow-md shadow-stone-300 sm:w-20 sm:p-3">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.hours}
             </p>
-            <p>Jam</p>
+            <p className="secondary-text">Jam</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
+          <div className="w-16 rounded-lg p-1 shadow-md shadow-stone-300 sm:w-20 sm:p-3">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.minutes}
             </p>
-            <p>Minit</p>
+            <p className="secondary-text">Minit</p>
           </div>
-          <div className="w-20 rounded-lg p-3 shadow-md shadow-stone-300">
+          <div className="w-16 rounded-lg p-1 shadow-md shadow-stone-300 sm:w-20 sm:p-3">
             <p className="clash-display text-2xl font-medium sm:text-3xl">
               {timeLeft.seconds}
             </p>
-            <p>Saat</p>
+            <p className="secondary-text">Saat</p>
           </div>
         </div>
       </motion.div>

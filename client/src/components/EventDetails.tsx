@@ -1,4 +1,3 @@
-import Title from "./Title";
 import { motion } from "framer-motion";
 
 const EventDetails = () => {
@@ -22,53 +21,63 @@ const EventDetails = () => {
         variants={container}
         initial="hidden"
         animate="show"
-        className="primary-text my-8 flex min-h-[85vh] w-full flex-col justify-evenly px-4 text-center"
+        className="primary-text mt-6 mb-4 flex min-h-[85vh] w-full flex-col justify-evenly px-9 text-center"
       >
-        <Title title="Walimatul Urus" />
-        <motion.p className="text-neutral-600">
-          Assalamualaikum & Salam Sejahtera, kami
+        {/* <Title title="Walimatul Urus" /> */}
+        <img
+          className="mx-auto my-4 w-60"
+          src="bismillah.png"
+          alt="bismillah"
+        />
+        <motion.p className="secondary-text">
+          Assalamualaikum & Salam Sejahtera
         </motion.p>
-        <motion.div>
-          <div className="primary-text my-3 font-bold">
-            <h2>MOHD ZIN BIN HASAN</h2>
+        <motion.div className="names my-1 space-y-2 text-xl font-medium sm:text-2xl">
+          <div className="">
+            <h2>Mohd Zin bin Hassan</h2>
             <h6>&</h6>
-            <h2>HAZLINA BINTI JUSOH</h2>
+            <h2>Hazlina binti Jusoh</h2>
           </div>
           <hr className="accent-color mx-8" />
-          <div className="primary-text my-3 font-bold">
-            <h2>SUHAIMI BIN MOHAMED NOOR</h2>
+          <div className="">
+            <h2>Suhaimi bin Mohamed Noor</h2>
             <h6>&</h6>
-            <h2>NOR ASMAWATI BINTI MAT ALI</h2>
+            <h2>Nor Asmawati binti Mat Ali</h2>
           </div>
         </motion.div>
 
-        <motion.div className="text-neutral-600">
+        <motion.div className="secondary-text">
           <p>
-            Dengan segala hormatnya kami ingin menjemput
-            Dato’/Datin/Tuan/Puan/Encik/Cik untuk menyerikan majlis perkahwinan
-            puteri kami
+            Dengan segala hormatnya kami ingin menjemput Dato’/ Datin/ Tuan/
+            Puan/ Encik/ Cik seisi keluarga ke majlis perkahwinan puteri kami
           </p>
         </motion.div>
-        <motion.div className="names my-4 text-4xl font-bold tracking-widest">
-          <hr className="accent-color mx-2" />
-          <div className="mt-3">
+        <motion.div className="names my-2 rounded-lg border-3 border-dotted border-[#cbb79f] px-2 py-4 text-2xl font-semibold tracking-wider sm:text-3xl">
+          {/* <hr className="accent-color mx-2" /> */}
+          <div className="">
             <h2>Norakmal binti Suhaimi</h2>
           </div>
           <h6>&</h6>
-          <div className="mb-4">
+          <div className="">
             <h2>Mohd Syafiq Azfar bin Rizaman</h2>
           </div>
-          <hr className="accent-color mx-2" />
+          {/* <hr className="accent-color mx-2" /> */}
         </motion.div>
-        <motion.div>
-          <p className="text-neutral-600">Pada Tarikh</p>
-          <p className="mb-4 text-lg font-medium uppercase">3 Mei 2025</p>
-          <p className="text-neutral-600">Bertempat Di</p>
-          <p className="mb-4 text-lg font-medium uppercase">
-            NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN
-          </p>
-          <p className="text-neutral-600">Masa</p>
-          <p className="text-lg font-medium uppercase">12.00PM - 5.00PM</p>
+        <motion.div className="space-y-2">
+          <div>
+            <p className="secondary-text">Pada Tarikh</p>
+            <p className="font-medium uppercase">3 Mei 2025</p>
+          </div>
+          <div>
+            <p className="secondary-text">Bertempat Di</p>
+            <p className="font-medium uppercase">
+              NO. 241, BLOK 9, FELDA PERASU, 18300 GUA MUSANG, KELANTAN
+            </p>
+          </div>
+          <div>
+            <p className="secondary-text">Masa</p>
+            <p className="font-medium uppercase">12.00PM - 5.00PM</p>
+          </div>
         </motion.div>
       </motion.div>
     </div>

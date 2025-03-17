@@ -11,11 +11,11 @@ const Contact = () => {
       transition={{
         duration: 0.8,
       }}
-      className="primary-text mt-8 mb-24 flex flex-col items-center"
+      className="primary-text mt-8 mb-24 flex flex-col items-center px-9"
     >
       <Title title="Hubungi Kami" />
-      <p className="text-neutral-600">Bagi sebarang pertanyaan, sila hubungi</p>
-      <div className="my-8 flex w-full flex-col items-center gap-4 text-lg font-semibold">
+      <p className="secondary-text">Bagi sebarang pertanyaan, sila hubungi</p>
+      <div className="my-8 flex w-full flex-col items-center gap-4 font-semibold">
         <div className="flex w-full items-center">
           <p className="w-3/5 text-start">Mohd Zin</p>
           <div className="flex w-2/5 justify-end gap-6">

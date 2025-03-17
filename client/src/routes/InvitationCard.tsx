@@ -5,7 +5,9 @@ import Contact from "../components/Contact";
 import Location from "../components/Location";
 import Guestbook from "../components/Guestbook";
 import Navigation from "../components/Navigation";
+
 import ParticlesBackground from "../components/ParticlesBackground";
+import Aturcara from "../components/Aturcara";
 
 const InvitationCard = () => {
   return (
@@ -32,27 +34,29 @@ const InvitationCard = () => {
         animate={{ x: 1000 }}
         transition={{ duration: 1.5, ease: "easeInOut" }}
         /> */}
-      <div className="mx-auto flex flex-col items-center justify-center px-2 text-center">
+      <div className="mx-auto flex flex-col items-center justify-center text-center sm:px-10">
         <ParticlesBackground />
-        <div className="z-30">
+        <div className="z-10">
           <img
-            className="absolute -top-24 -left-28 w-80 opacity-90 sm:-top-20"
+            className="fixed -top-16 -left-28 w-80 opacity-90 sm:absolute sm:-top-10"
             src="/top-left.webp"
           />
           <img
-            className="absolute -top-24 -right-28 w-80 opacity-90 sm:-top-20"
+            className="fixed -top-16 -right-28 w-80 opacity-90 sm:absolute sm:-top-10"
             src="/top-right.webp"
           />
           <img
-            className="absolute -bottom-16 -left-14 w-48 -rotate-12 opacity-80 sm:-bottom-10"
+            className="fixed bottom-20 -left-36 w-60 rotate-12 opacity-80 sm:absolute sm:bottom-0"
             src="/bottom-left.webp"
           />
           <img
-            className="absolute -right-14 -bottom-16 w-48 rotate-12 opacity-80 sm:-bottom-10"
+            className="fixed -right-36 bottom-20 w-60 -rotate-12 opacity-80 sm:absolute sm:bottom-0"
             src="/bottom-right.webp"
           />
         </div>
         <EventDetails />
+
+        <Aturcara />
 
         <Navigation />
 
@@ -65,7 +69,7 @@ const InvitationCard = () => {
           transition={{
             duration: 0.8,
           }}
-          className="crimson relative my-8 rounded-sm bg-[#fff2f2] p-6 text-neutral-600 italic"
+          className="crimson relative mx-9 my-4 mt-8 rounded-lg border-2 border-dotted border-[#cbb79f] bg-[#fff2f2] p-6 text-neutral-600 italic"
         >
           “Semoga Allah memberi barakah kepadamu dan keberkahan atas pernikahan
           kamu, dan mengumpulkan kalian berdua dalam kebaikan.”
