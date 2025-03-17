@@ -59,7 +59,7 @@ const WelcomePage = ({
           onClick={closeModal}
           className="primary-text cursor-pointer rounded-lg bg-[#A75F5F] px-6 py-3 text-lg font-medium tracking-widest transition-colors duration-300 hover:bg-[#b86969]"
         >
-          <p className="text-white">Open</p>
+          <p className="text-white">Buka</p>
         </button>
         <p className="accent-color primary-text my-4">#theperfectFiqforAkma</p>
       </div>
