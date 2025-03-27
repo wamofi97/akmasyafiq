@@ -94,7 +94,7 @@ const GuestbookModal: React.FC<GuestbookModalProps> = ({
     >
       <div
         ref={modalRef}
-        className="relative w-full max-w-md rounded-lg bg-slate-50 p-6 shadow-lg"
+        className="relative w-full max-w-md rounded-lg bg-slate-50 p-2 shadow-lg"
       >
         <div className="relative w-full rounded-lg p-6">
           <h5 className="mb-4 text-center text-2xl font-bold"> Ucapan</h5>
